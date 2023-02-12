@@ -1,7 +1,9 @@
 FROM python:3.8-slim
-WORKDIR /app
+RUN apt update && \
+    apt install --no-install-recommends -y build-essential gcc
 COPY requirements.txt /requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
-COPY . /app
+RUN pip install --no-cache-dir --user -r /requirements.txt
+WORKDIR /app
+EXPOSE 8501
 ENTRYPOINT ["streamlit","run"]
 CMD ["app.py"]
