@@ -1,8 +1,8 @@
 FROM python:3.8-slim
-WORKDIR /appfolder
+WORKDIR /app
 COPY requirements.txt /requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8501
-COPY . /appfolder
+COPY . /app
 ENTRYPOINT ["streamlit","run"]
 CMD ["app.py"]
