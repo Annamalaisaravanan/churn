@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:294897175072:task-definition/churn:3",
+    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:294897175072:task-definition/churn:10",
     "containerDefinitions": [
         {
             "name": "churn",
@@ -10,11 +10,6 @@
                 {
                     "containerPort": 8501,
                     "hostPort": 8501,
-                    "protocol": "tcp"
-                },
-                {
-                    "containerPort": 80,
-                    "hostPort": 80,
                     "protocol": "tcp"
                 }
             ],
@@ -38,7 +33,7 @@
     "taskRoleArn": "arn:aws:iam::294897175072:role/ECSTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::294897175072:role/ECSTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 3,
+    "revision": 10,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -80,6 +75,6 @@
     ],
     "cpu": "512",
     "memory": "1024",
-    "registeredAt": "2023-02-13T11:27:21.353000+05:30",
+    "registeredAt": "2023-02-14T18:54:02.663000+05:30",
     "registeredBy": "arn:aws:iam::294897175072:root"
 }
