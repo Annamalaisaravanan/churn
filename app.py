@@ -12,7 +12,7 @@ data=pickle.load(open('df.pkl','rb'))
 page_bg_img = '''
 <style>
 .stApp {
-background-image: url("C:/Users/annamalai/Downloads/img-unsplash.jpg");
+
 background-repeat: no-repeat;
 background-size:100% 100%;
 }
@@ -21,7 +21,7 @@ background-size:100% 100%;
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
 
-
+#background-image: url("C:/Users/annamalai/Downloads/img-unsplash.jpg");
 
    
 # Title
@@ -81,9 +81,8 @@ if st.button('Predict'):
     query.append(ans[0])
     print(query)
 
-    
-    conn = psycopg2.connect(host='localhost', dbname='churn',
-                        user='postgres', password='Annamalai487*')
+    conn = psycopg2.connect(host='annamalai.crhq093vjbni.ap-south-1.rds.amazonaws.com', dbname='postgres',
+                        user='postgres', password='9894056344')
     cursor = conn.cursor()
 
     cursor.execute("""SELECT relname FROM pg_class WHERE relkind='r'
@@ -113,6 +112,7 @@ if st.button('Predict'):
         
     else:
           pass
+
     postgres_insert_query = """ INSERT INTO churn (CreditScore,Geography,Gender,Age,Tenure,Balance,NumofProducts,HasCrCard,IsActiveMember,EstimatedSalary,Exited) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
     record_to_insert = tuple([np.float64(i) for i in query])
     print(record_to_insert)

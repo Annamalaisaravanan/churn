@@ -10,7 +10,7 @@
           "secretOptions": null,
           "options": {
             "awslogs-group": "/ecs/churn",
-            "awslogs-region": "ap-south-1",
+            "awslogs-region": "us-east-1",
             "awslogs-stream-prefix": "ecs"
           }
         },
@@ -37,7 +37,7 @@
         "memoryReservation": null,
         "volumesFrom": [],
         "stopTimeout": null,
-        "image": "294897175072.dkr.ecr.ap-south-1.amazonaws.com/churn",
+        "image": "294897175072.dkr.ecr.us-east-1.amazonaws.com/churn",
         "startTimeout": null,
         "firelensConfiguration": null,
         "dependsOn": null,
@@ -64,7 +64,7 @@
       "EC2",
       "FARGATE"
     ],
-    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:294897175072:task-definition/churn:11",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:294897175072:task-definition/churn:1",
     "family": "churn",
     "requiresAttributes": [
       {
@@ -126,7 +126,7 @@
       "cpuArchitecture": null
     },
     "cpu": "512",
-    "revision": 11,
+    "revision": 1,
     "status": "ACTIVE",
     "inferenceAccelerators": null,
     "proxyConfiguration": null,
