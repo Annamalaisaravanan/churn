@@ -82,46 +82,46 @@ if st.button('Predict'):
     print(query)
 
 #annamalai.crhq093vjbni.ap-south-1.rds.amazonaws.com
-    conn = psycopg2.connect(host='pod3-churn.ciecx9kglmgm.ap-south-1.rds.amazonaws.com', dbname='postgres',
-                        user='postgres', password='pod3mlops')
-    cursor = conn.cursor()
+    # conn = psycopg2.connect(host='pod3-churn.ciecx9kglmgm.ap-south-1.rds.amazonaws.com', dbname='postgres',
+    #                     user='postgres', password='pod3mlops')
+    # cursor = conn.cursor()
 
-    cursor.execute("""SELECT relname FROM pg_class WHERE relkind='r'
-                  AND relname !~ '^(pg_|sql_)';""") # "rel" is short for relation.
+    # cursor.execute("""SELECT relname FROM pg_class WHERE relkind='r'
+    #               AND relname !~ '^(pg_|sql_)';""") # "rel" is short for relation.
 
-    tables = [i[0] for i in cursor.fetchall()]
+    # tables = [i[0] for i in cursor.fetchall()]
 
 
-    if 'churn' not in tables:       
-        command =   """
-                        CREATE TABLE churn (
-                            CreditScore SERIAL NOT NULL,
-                            Geography SERIAL NOT NULL,
-                            Gender SERIAL NOT NULL,
-                            Age SERIAL NOT NULL,
-                            Tenure SERIAL NOT NULL,
-                            Balance SERIAL NOT NULL,
-                            NumofProducts SERIAL NOT NULL,
-                            HasCrCard SERIAL NOT NULL,
-                            IsActiveMember SERIAL NOT NULL,
-                           EstimatedSalary SERIAL NOT NULL,
-                           Exited SERIAL NOT NULL
-                        )
-                        """
-        cursor.execute(command)
+    # if 'churn' not in tables:       
+    #     command =   """
+    #                     CREATE TABLE churn (
+    #                         CreditScore SERIAL NOT NULL,
+    #                         Geography SERIAL NOT NULL,
+    #                         Gender SERIAL NOT NULL,
+    #                         Age SERIAL NOT NULL,
+    #                         Tenure SERIAL NOT NULL,
+    #                         Balance SERIAL NOT NULL,
+    #                         NumofProducts SERIAL NOT NULL,
+    #                         HasCrCard SERIAL NOT NULL,
+    #                         IsActiveMember SERIAL NOT NULL,
+    #                        EstimatedSalary SERIAL NOT NULL,
+    #                        Exited SERIAL NOT NULL
+    #                     )
+    #                     """
+    #     cursor.execute(command)
             
         
-    else:
-          pass
+    # else:
+    #       pass
 
-    postgres_insert_query = """ INSERT INTO churn (CreditScore,Geography,Gender,Age,Tenure,Balance,NumofProducts,HasCrCard,IsActiveMember,EstimatedSalary,Exited) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
-    record_to_insert = tuple([np.float64(i) for i in query])
-    print(record_to_insert)
-    cursor.execute(postgres_insert_query, record_to_insert)  
+    # postgres_insert_query = """ INSERT INTO churn (CreditScore,Geography,Gender,Age,Tenure,Balance,NumofProducts,HasCrCard,IsActiveMember,EstimatedSalary,Exited) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
+    # record_to_insert = tuple([np.float64(i) for i in query])
+    # print(record_to_insert)
+    # cursor.execute(postgres_insert_query, record_to_insert)  
 
-    conn.commit()
-    count = cursor.rowcount
-    print(count, "Record inserted successfully into mobile table")    
+    # conn.commit()
+    # count = cursor.rowcount
+    # print(count, "Record inserted successfully into mobile table")    
                         
     
                 
