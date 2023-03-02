@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:294897175072:task-definition/churn:21",
+    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:294897175072:task-definition/churn:24",
     "containerDefinitions": [
         {
             "name": "churn",
@@ -31,7 +31,7 @@
     "family": "churn",
     "executionRoleArn": "arn:aws:iam::294897175072:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 21,
+    "revision": 24,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -70,6 +70,6 @@
     ],
     "cpu": "512",
     "memory": "1024",
-    "registeredAt": "2023-03-01T18:17:23.981000+05:30",
+    "registeredAt": "2023-03-02T16:22:02.135000+05:30",
     "registeredBy": "arn:aws:iam::294897175072:root"
 }
