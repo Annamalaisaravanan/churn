@@ -81,7 +81,7 @@ if st.button('Predict'):
     query.append(ans[0])
     print(query)
 
-#annamalai.crhq093vjbni.ap-south-1.rds.amazonaws.com
+
     # conn = psycopg2.connect(host='pod3-churn.ciecx9kglmgm.ap-south-1.rds.amazonaws.com', dbname='postgres',
     #                     user='postgres', password='pod3mlops')
     # cursor = conn.cursor()
@@ -122,6 +122,7 @@ if st.button('Predict'):
     # conn.commit()
     # count = cursor.rowcount
     # print(count, "Record inserted successfully into mobile table")    
+    # Code End
                         
     
                 
